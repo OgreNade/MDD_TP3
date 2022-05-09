@@ -24,7 +24,7 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             Vehicules.Add(new Voiture("55WTY4G6GA6T2B6DB", "Ford", "Escape", 2021, 89.99, "Rouge", 6203, Etat.Endomage));
         }
 
-        public bool AjouterVoiture(Vehicule vehicule) 
+        public bool AjouterVehicule(Vehicule vehicule) 
         {
             // TODO: Verifier que les donnee de la voiture sont valides
 
@@ -33,7 +33,7 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             return true;
         }
 
-        public bool ModifierVoiture(Vehicule vehiculeModifier)
+        public bool ModifierVehicule(Vehicule vehiculeModifier)
         {
             // TODO: Verifier que les donnee de la vehiculeModifier sont valides
 
@@ -44,9 +44,29 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             return true;
         }
 
-        public Vehicule GetVehiculeByNoSerie(string noSerie) 
+        public bool SupprimerVehicule(string noSerie)
         {
-            throw new NotImplementedException();
+            Vehicules.Remove(GetVehiculeByNoSerie(noSerie));
+
+            return true;
+        }
+
+        public Vehicule GetVehiculeByNoSerie(string noSerie)
+        {
+            Vehicule vehiculeTrouver = null;
+
+            for (int i = 0; vehiculeTrouver == null && i < Vehicules.Count; i++)
+            {
+                if (Vehicules[i].NoSerie == noSerie)
+                {
+                    vehiculeTrouver = Vehicules[i];
+                }
+            }
+
+            if (vehiculeTrouver == null)
+                throw new Exception("Aucun vehicule n'a été trouvé avec ce numéro de série");
+
+            return vehiculeTrouver;
         }
 
         public IList<Vehicule> GetAllVehicules()

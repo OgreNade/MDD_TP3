@@ -44,6 +44,7 @@ namespace wfa_MDD_TP3
 
         private void AfficheVehicule(string filtre)
         {
+            DGV.DataSource = null;
             filtre = filtre.ToLower();
 
             if (filtre == "")
@@ -77,6 +78,20 @@ namespace wfa_MDD_TP3
         private void txtFiltre_TextChanged(object sender, EventArgs e)
         {
             AfficheVehicule(txtFiltre.Text);
+        }
+
+        private void btnSupprimerVehicule_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer le vehicule sélectionné?", "AVERTISSEMENT",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                string noSerie = DGV.SelectedRows[0].Cells[0].Value.ToString();
+
+                if (systemeDeVehicule.SupprimerVehicule(noSerie))
+                {
+                    MessageBox.Show("Le vehicule a bien été supprimé");
+                    AfficheVehicule(txtFiltre.Text);
+                }
+            }
         }
     }
 }

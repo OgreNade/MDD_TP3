@@ -70,6 +70,7 @@ namespace wfa_MDD_TP3
             this.btnSupprimerVehicule.TabIndex = 3;
             this.btnSupprimerVehicule.Text = "Supprimer un Véhicule";
             this.btnSupprimerVehicule.UseVisualStyleBackColor = true;
+            this.btnSupprimerVehicule.Click += new System.EventHandler(this.btnSupprimerVehicule_Click);
             // 
             // txtFiltre
             // 
