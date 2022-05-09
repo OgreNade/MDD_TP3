@@ -51,6 +51,7 @@ namespace wfa_MDD_TP3
             this.Controls.Add(this.btnGestionVehicule);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

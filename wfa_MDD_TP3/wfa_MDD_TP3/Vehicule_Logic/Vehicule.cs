@@ -40,5 +40,10 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             Kilometrage = vehicule.Kilometrage;
             EtatCourent = vehicule.EtatCourent;
         }
+
+        public override string ToString()
+        {
+            return $"{NoSerie} : {Marque} {Modele} {Annee} {Couleur} | Kilo: {Kilometrage} | Courament {EtatCourent}";
+        }
     }
 }

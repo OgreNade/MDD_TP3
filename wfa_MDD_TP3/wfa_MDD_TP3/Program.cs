@@ -16,7 +16,10 @@ namespace wfa_MDD_TP3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            SystemeGeneral systemeGeneral = new SystemeGeneral();
+
+            Application.Run(new MainForm(systemeGeneral));
         }
     }
 }

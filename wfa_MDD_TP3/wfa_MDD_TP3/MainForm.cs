@@ -7,20 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wfa_MDD_TP3.Vehicule_Logic;
 
 namespace wfa_MDD_TP3
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        SystemeGeneral systemeGeneral;
+        public MainForm(SystemeGeneral systemeGeneral)
         {
             InitializeComponent();
+            this.systemeGeneral = systemeGeneral;
         }
 
         private void btnGestionVehicule_Click(object sender, EventArgs e)
         {
-            GestionVehiculeForm gestionVehiculeForm = new GestionVehiculeForm();
+            GestionVehiculeForm gestionVehiculeForm = new GestionVehiculeForm(systemeGeneral.systemeDeVehicule);
             gestionVehiculeForm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

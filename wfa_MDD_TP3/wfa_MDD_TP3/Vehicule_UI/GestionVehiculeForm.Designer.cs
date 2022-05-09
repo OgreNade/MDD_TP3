@@ -29,29 +29,20 @@ namespace wfa_MDD_TP3
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstAffichageVehicule = new System.Windows.Forms.ListBox();
             this.btnAjouterVehicule = new System.Windows.Forms.Button();
             this.btnModifierVehicule = new System.Windows.Forms.Button();
             this.btnSupprimerVehicule = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFiltre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRevenirAuMenu = new System.Windows.Forms.Button();
+            this.DGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstAffichageVehicule
-            // 
-            this.lstAffichageVehicule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAffichageVehicule.FormattingEnabled = true;
-            this.lstAffichageVehicule.ItemHeight = 20;
-            this.lstAffichageVehicule.Location = new System.Drawing.Point(48, 61);
-            this.lstAffichageVehicule.Name = "lstAffichageVehicule";
-            this.lstAffichageVehicule.Size = new System.Drawing.Size(427, 304);
-            this.lstAffichageVehicule.TabIndex = 0;
             // 
             // btnAjouterVehicule
             // 
             this.btnAjouterVehicule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterVehicule.Location = new System.Drawing.Point(523, 61);
+            this.btnAjouterVehicule.Location = new System.Drawing.Point(808, 61);
             this.btnAjouterVehicule.Name = "btnAjouterVehicule";
             this.btnAjouterVehicule.Size = new System.Drawing.Size(226, 70);
             this.btnAjouterVehicule.TabIndex = 1;
@@ -62,7 +53,7 @@ namespace wfa_MDD_TP3
             // btnModifierVehicule
             // 
             this.btnModifierVehicule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifierVehicule.Location = new System.Drawing.Point(523, 137);
+            this.btnModifierVehicule.Location = new System.Drawing.Point(808, 137);
             this.btnModifierVehicule.Name = "btnModifierVehicule";
             this.btnModifierVehicule.Size = new System.Drawing.Size(226, 70);
             this.btnModifierVehicule.TabIndex = 2;
@@ -73,20 +64,21 @@ namespace wfa_MDD_TP3
             // btnSupprimerVehicule
             // 
             this.btnSupprimerVehicule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimerVehicule.Location = new System.Drawing.Point(523, 213);
+            this.btnSupprimerVehicule.Location = new System.Drawing.Point(808, 213);
             this.btnSupprimerVehicule.Name = "btnSupprimerVehicule";
             this.btnSupprimerVehicule.Size = new System.Drawing.Size(226, 70);
             this.btnSupprimerVehicule.TabIndex = 3;
             this.btnSupprimerVehicule.Text = "Supprimer un Véhicule";
             this.btnSupprimerVehicule.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtFiltre
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(237, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltre.Location = new System.Drawing.Point(237, 33);
+            this.txtFiltre.Name = "txtFiltre";
+            this.txtFiltre.Size = new System.Drawing.Size(238, 22);
+            this.txtFiltre.TabIndex = 4;
+            this.txtFiltre.TextChanged += new System.EventHandler(this.txtFiltre_TextChanged);
             // 
             // label2
             // 
@@ -101,7 +93,7 @@ namespace wfa_MDD_TP3
             // btnRevenirAuMenu
             // 
             this.btnRevenirAuMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRevenirAuMenu.Location = new System.Drawing.Point(523, 289);
+            this.btnRevenirAuMenu.Location = new System.Drawing.Point(808, 289);
             this.btnRevenirAuMenu.Name = "btnRevenirAuMenu";
             this.btnRevenirAuMenu.Size = new System.Drawing.Size(226, 70);
             this.btnRevenirAuMenu.TabIndex = 8;
@@ -109,33 +101,48 @@ namespace wfa_MDD_TP3
             this.btnRevenirAuMenu.UseVisualStyleBackColor = true;
             this.btnRevenirAuMenu.Click += new System.EventHandler(this.btnRevenirAuMenu_Click);
             // 
+            // DGV
+            // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.AllowUserToResizeRows = false;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(48, 61);
+            this.DGV.MultiSelect = false;
+            this.DGV.Name = "DGV";
+            this.DGV.ReadOnly = true;
+            this.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV.Size = new System.Drawing.Size(742, 298);
+            this.DGV.TabIndex = 9;
+            // 
             // GestionVehiculeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 392);
+            this.ClientSize = new System.Drawing.Size(1046, 392);
+            this.Controls.Add(this.DGV);
             this.Controls.Add(this.btnRevenirAuMenu);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFiltre);
             this.Controls.Add(this.btnSupprimerVehicule);
             this.Controls.Add(this.btnModifierVehicule);
             this.Controls.Add(this.btnAjouterVehicule);
-            this.Controls.Add(this.lstAffichageVehicule);
             this.Name = "GestionVehiculeForm";
             this.Text = "GestionVehiculeForm";
+            this.Load += new System.EventHandler(this.GestionVehiculeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstAffichageVehicule;
         private System.Windows.Forms.Button btnAjouterVehicule;
         private System.Windows.Forms.Button btnModifierVehicule;
         private System.Windows.Forms.Button btnSupprimerVehicule;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFiltre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRevenirAuMenu;
+        private System.Windows.Forms.DataGridView DGV;
     }
 }

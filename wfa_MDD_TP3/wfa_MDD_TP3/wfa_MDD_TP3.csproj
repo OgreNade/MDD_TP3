@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SystemeGeneral.cs" />
     <Compile Include="Vehicule_Logic\Etat.cs" />
     <Compile Include="Vehicule_Logic\SystemeDeVehicule.cs" />
     <Compile Include="Vehicule_Logic\Vehicule.cs" />
+    <Compile Include="Vehicule_Logic\Voiture.cs" />
     <Compile Include="Vehicule_UI\GestionVehiculeForm.cs">
       <SubType>Form</SubType>
     </Compile>
