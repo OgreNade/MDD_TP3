@@ -22,13 +22,15 @@ namespace wfa_MDD_TP3
 
         private void btnAjouterVehicule_Click(object sender, EventArgs e)
         {
-            InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(false);
+            InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(systemeDeVehicule);
             infoVehiculeForm.ShowDialog();
         }
 
         private void btnModifierVehicule_Click(object sender, EventArgs e)
         {
-            InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(true);
+            string noSerie = DGV.SelectedRows[0].Cells[0].Value.ToString();
+
+            InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(systemeDeVehicule,noSerie);
             infoVehiculeForm.ShowDialog();
         }
 
@@ -73,6 +75,9 @@ namespace wfa_MDD_TP3
 
             DGV.ClearSelection();
             DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            btnModifierVehicule.Enabled = false;
+            btnSupprimerVehicule.Enabled = false;
         }
 
         private void txtFiltre_TextChanged(object sender, EventArgs e)
@@ -92,6 +97,12 @@ namespace wfa_MDD_TP3
                     AfficheVehicule(txtFiltre.Text);
                 }
             }
+        }
+
+        private void DGV_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModifierVehicule.Enabled = true;
+            btnSupprimerVehicule.Enabled = true;
         }
     }
 }

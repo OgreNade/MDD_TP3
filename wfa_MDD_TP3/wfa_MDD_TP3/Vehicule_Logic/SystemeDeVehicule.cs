@@ -10,11 +10,6 @@ namespace wfa_MDD_TP3.Vehicule_Logic
     {
         private IList<Vehicule> Vehicules;
 
-        //SystemeDeVehicule() // Constructeur par default habituel
-        //{
-        //    Vehicules = new List<Vehicule>();
-        //}
-
         public SystemeDeVehicule() // Constructeur par default avec donne hardcoder
         {
             Vehicules = new List<Vehicule>();
@@ -39,7 +34,7 @@ namespace wfa_MDD_TP3.Vehicule_Logic
 
             Vehicule vehiculeOriginal = GetVehiculeByNoSerie(vehiculeModifier.NoSerie);
 
-            // TODO: Modifier la voiture
+            vehiculeOriginal = new Voiture((Voiture)vehiculeModifier);
 
             return true;
         }
