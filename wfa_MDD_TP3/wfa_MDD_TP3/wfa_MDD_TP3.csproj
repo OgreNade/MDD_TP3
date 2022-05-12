@@ -46,6 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client_Logic\Client.cs" />
+    <Compile Include="Client_Logic\ClientManager.cs" />
+    <Compile Include="Client_UI\AfficherInfoDunClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_UI\AfficherInfoDunClientForm.Designer.cs">
+      <DependentUpon>AfficherInfoDunClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_UI\AjouterClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_UI\AjouterClientForm.Designer.cs">
+      <DependentUpon>AjouterClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_UI\GestionClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_UI\GestionClientForm.Designer.cs">
+      <DependentUpon>GestionClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemeGeneral.cs" />
     <Compile Include="Vehicule_Logic\Etat.cs" />
     <Compile Include="Vehicule_Logic\SystemeDeVehicule.cs" />
@@ -71,6 +91,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client_UI\AfficherInfoDunClientForm.resx">
+      <DependentUpon>AfficherInfoDunClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_UI\AjouterClientForm.resx">
+      <DependentUpon>AjouterClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_UI\GestionClientForm.resx">
+      <DependentUpon>GestionClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehicule_UI\GestionVehiculeForm.resx">
       <DependentUpon>GestionVehiculeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,5 +131,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

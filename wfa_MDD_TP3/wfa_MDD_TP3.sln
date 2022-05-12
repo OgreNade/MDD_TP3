@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wfa_MDD_TP3", "wfa_MDD_TP3\wfa_MDD_TP3.csproj", "{5BC3CC2A-3087-4B60-A4BD-E043E93E2B1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationPrestige_UnitTests", "LocationPrestige_UnitTests\LocationPrestige_UnitTests.csproj", "{02D6C1D9-908E-4E86-95E3-DF8CF6C8A3DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5BC3CC2A-3087-4B60-A4BD-E043E93E2B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BC3CC2A-3087-4B60-A4BD-E043E93E2B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BC3CC2A-3087-4B60-A4BD-E043E93E2B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D6C1D9-908E-4E86-95E3-DF8CF6C8A3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D6C1D9-908E-4E86-95E3-DF8CF6C8A3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D6C1D9-908E-4E86-95E3-DF8CF6C8A3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D6C1D9-908E-4E86-95E3-DF8CF6C8A3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
