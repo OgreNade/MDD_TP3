@@ -66,6 +66,36 @@
     <Compile Include="Client_UI\GestionClientForm.Designer.cs">
       <DependentUpon>GestionClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location_UI\AjouterLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_UI\AjouterLocationForm.designer.cs">
+      <DependentUpon>AjouterLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location_UI\AfficherAllLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_UI\AfficherAllLocationForm.Designer.cs">
+      <DependentUpon>AfficherAllLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location_UI\GestionLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_UI\GestionLocationForm.Designer.cs">
+      <DependentUpon>GestionLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location_UI\ModifierLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_UI\ModifierLocationForm.Designer.cs">
+      <DependentUpon>ModifierLocationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemeGeneral.cs" />
     <Compile Include="Vehicule_Logic\Etat.cs" />
     <Compile Include="Vehicule_Logic\SystemeDeVehicule.cs" />
@@ -100,6 +130,21 @@
     <EmbeddedResource Include="Client_UI\GestionClientForm.resx">
       <DependentUpon>GestionClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_UI\AfficherAllLocationForm.resx">
+      <DependentUpon>AfficherAllLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_UI\AjouterLocationForm.resx">
+      <DependentUpon>AjouterLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_UI\GestionLocationForm.resx">
+      <DependentUpon>GestionLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_UI\ModifierLocationForm.resx">
+      <DependentUpon>ModifierLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehicule_UI\GestionVehiculeForm.resx">
       <DependentUpon>GestionVehiculeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +176,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Location_Logic\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

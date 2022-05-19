@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace wfa_MDD_TP3.Location_UI
 {
-    public partial class LocationInterface : Form
+    public partial class AfficherAllLocationForm : Form
     {
-        public LocationInterface()
+        public AfficherAllLocationForm()
         {
             InitializeComponent();
         }
