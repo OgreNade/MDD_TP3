@@ -34,7 +34,7 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             return true;
         }
 
-        public Vehicule GetVehiculeByNoSerie(string noSerie)
+        public Vehicule GetVehiculeByNoSerie(string noSerie) // returns null if no vehicule is found
         {
             Vehicule vehiculeTrouver = null;
 
@@ -45,9 +45,6 @@ namespace wfa_MDD_TP3.Vehicule_Logic
                     vehiculeTrouver = Vehicules[i];
                 }
             }
-
-            if (vehiculeTrouver == null)
-                throw new Exception("Aucun vehicule n'a été trouvé avec ce numéro de série");
 
             return vehiculeTrouver;
         }
