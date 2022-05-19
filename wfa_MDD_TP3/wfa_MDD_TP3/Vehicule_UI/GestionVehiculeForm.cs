@@ -24,6 +24,8 @@ namespace wfa_MDD_TP3
         {
             InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(systemeDeVehicule);
             infoVehiculeForm.ShowDialog();
+
+            AfficheVehicule(txtFiltre.Text);
         }
 
         private void btnModifierVehicule_Click(object sender, EventArgs e)
@@ -32,6 +34,8 @@ namespace wfa_MDD_TP3
 
             InfoVehiculeForm infoVehiculeForm = new InfoVehiculeForm(systemeDeVehicule,noSerie);
             infoVehiculeForm.ShowDialog();
+
+            AfficheVehicule(txtFiltre.Text);
         }
 
         private void btnRevenirAuMenu_Click(object sender, EventArgs e)

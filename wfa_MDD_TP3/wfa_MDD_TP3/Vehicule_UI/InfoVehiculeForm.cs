@@ -91,6 +91,30 @@ namespace wfa_MDD_TP3
             cmbEtat.Items.Add(Etat.Vendu);
         }
 
+        private void VerifierInput()
+        {
+            if (txtNoSerie.Text == "")
+                throw new Exception("Veuillez entrer un numero de serie pour le vehicule");
+
+            if (cmbMarque.SelectedItem == null)
+                throw new Exception("Veuillez selectionner une marque pour le vehicule");
+
+            if (cmbModele.SelectedItem == null)
+                throw new Exception("Veuillez selectionner un modele pour le vehicule");
+
+            if (!int.TryParse(txtAnnee.Text, out int anneDuVehicule))
+                throw new Exception("L'année doit être un entier");
+
+            if (nudPrix.Value == 0)
+                throw new Exception("Veuillez selectionner un prix pour le vehicule");
+
+            if (cmbCouleur.SelectedItem == null)
+                throw new Exception("Veuillez selectionner une couleur pour le vehicule");
+
+            if (cmbEtat.SelectedItem == null)
+                throw new Exception("Veuillez selectionner un Etat pour le vehicule");
+        }
+
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             Close();
@@ -98,17 +122,42 @@ namespace wfa_MDD_TP3
 
         private void btnConfirmation_Click(object sender, EventArgs e)
         {
-            if (vehiculeCourant != null)
+            try
             {
-                // fait la modification
-                MessageBox.Show("Modification du véhicule effectué avec succès!");
-                Close();
+                VerifierInput();
+
+                if (vehiculeCourant != null)
+                {
+                    systemeDeVehicule.GetVehiculeByNoSerie(txtNoSerie.Text).ModifierVehicule(
+                        (double)nudPrix.Value,
+                        cmbCouleur.SelectedItem.ToString(),
+                        (int)nudKilometrage.Value,
+                        (Etat)cmbEtat.SelectedItem);
+
+                    MessageBox.Show("Modification du véhicule effectué avec succès!");
+                    Close();
+                }
+                else
+                {
+                    vehiculeCourant = new Voiture(
+                        txtNoSerie.Text,
+                        cmbMarque.SelectedItem.ToString(),
+                        cmbModele.SelectedItem.ToString(),
+                        int.Parse(txtAnnee.Text),
+                        (double)nudPrix.Value,
+                        cmbCouleur.SelectedItem.ToString(),
+                        (int)nudKilometrage.Value,
+                        (Etat)cmbEtat.SelectedItem);
+
+                    systemeDeVehicule.AjouterVehicule(vehiculeCourant);
+
+                    MessageBox.Show("Ajout du véhicule effectué avec succès!");
+                    Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // fait l'ajout
-                MessageBox.Show("Ajout du véhicule effectué avec succès!");
-                Close();
+                MessageBox.Show(ex.Message);
             }
         }
     }

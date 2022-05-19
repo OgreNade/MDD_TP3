@@ -21,20 +21,8 @@ namespace wfa_MDD_TP3.Vehicule_Logic
 
         public bool AjouterVehicule(Vehicule vehicule) 
         {
-            // TODO: Verifier que les donnee de la voiture sont valides
 
             Vehicules.Add(vehicule);
-
-            return true;
-        }
-
-        public bool ModifierVehicule(Vehicule vehiculeModifier)
-        {
-            // TODO: Verifier que les donnee de la vehiculeModifier sont valides
-
-            Vehicule vehiculeOriginal = GetVehiculeByNoSerie(vehiculeModifier.NoSerie);
-
-            vehiculeOriginal = new Voiture((Voiture)vehiculeModifier);
 
             return true;
         }
@@ -46,7 +34,7 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             return true;
         }
 
-        public Vehicule GetVehiculeByNoSerie(string noSerie)
+        public Vehicule GetVehiculeByNoSerie(string noSerie) // returns null if no vehicule is found
         {
             Vehicule vehiculeTrouver = null;
 
@@ -57,9 +45,6 @@ namespace wfa_MDD_TP3.Vehicule_Logic
                     vehiculeTrouver = Vehicules[i];
                 }
             }
-
-            if (vehiculeTrouver == null)
-                throw new Exception("Aucun vehicule n'a été trouvé avec ce numéro de série");
 
             return vehiculeTrouver;
         }
