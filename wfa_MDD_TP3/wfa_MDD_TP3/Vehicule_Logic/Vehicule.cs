@@ -12,10 +12,10 @@ namespace wfa_MDD_TP3.Vehicule_Logic
         public string Marque { get; }
         public string Modele { get; }
         public int Annee { get; }
-        public double Prix { get; }
-        public string Couleur { get; }
-        public int Kilometrage { get; }
-        public Etat EtatCourent { get; }
+        public double Prix { get; private set; }
+        public string Couleur { get; private set; }
+        public int Kilometrage { get; private set; }
+        public Etat EtatCourent { get; private set; }
 
         public Vehicule(string noSerie, string marque, string modele, int annee, double prix, string couleur, int kilometrage, Etat etatCourent)
         {
@@ -39,6 +39,14 @@ namespace wfa_MDD_TP3.Vehicule_Logic
             Couleur = vehicule.Couleur;
             Kilometrage = vehicule.Kilometrage;
             EtatCourent = vehicule.EtatCourent;
+        }
+
+        public void ModifierVehicule(double prix, string couleur, int kilometrage, Etat etatCourent)
+        {
+            Prix = prix;
+            Couleur = couleur;
+            Kilometrage = kilometrage;
+            EtatCourent = etatCourent;
         }
 
         public override string ToString()

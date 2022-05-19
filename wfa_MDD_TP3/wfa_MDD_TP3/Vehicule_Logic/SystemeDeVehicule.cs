@@ -21,20 +21,8 @@ namespace wfa_MDD_TP3.Vehicule_Logic
 
         public bool AjouterVehicule(Vehicule vehicule) 
         {
-            // TODO: Verifier que les donnee de la voiture sont valides
 
             Vehicules.Add(vehicule);
-
-            return true;
-        }
-
-        public bool ModifierVehicule(Vehicule vehiculeModifier)
-        {
-            // TODO: Verifier que les donnee de la vehiculeModifier sont valides
-
-            Vehicule vehiculeOriginal = GetVehiculeByNoSerie(vehiculeModifier.NoSerie);
-
-            vehiculeOriginal = new Voiture((Voiture)vehiculeModifier);
 
             return true;
         }
