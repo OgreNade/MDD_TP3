@@ -30,6 +30,7 @@ namespace wfa_MDD_TP3.Location_UI
         private void InitializeComponent()
         {
             this.grb_client = new System.Windows.Forms.GroupBox();
+            this.btnChercheClient = new System.Windows.Forms.Button();
             this.txt_prenom = new System.Windows.Forms.TextBox();
             this.txt_nom = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.lbl_nom = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChercheVoiture = new System.Windows.Forms.Button();
             this.txt_annee = new System.Windows.Forms.TextBox();
             this.lbl_annee = new System.Windows.Forms.Label();
             this.txt_modele = new System.Windows.Forms.TextBox();
@@ -46,51 +48,41 @@ namespace wfa_MDD_TP3.Location_UI
             this.txt_serie = new System.Windows.Forms.TextBox();
             this.lbl_serie = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txt_duree = new System.Windows.Forms.TextBox();
-            this.lbl_duree = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.lbl_retour = new System.Windows.Forms.Label();
             this.lbl_emprunt = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_total = new System.Windows.Forms.TextBox();
-            this.txt_tvq = new System.Windows.Forms.TextBox();
-            this.txt_tps = new System.Windows.Forms.TextBox();
-            this.txt_km = new System.Windows.Forms.TextBox();
-            this.txt_location = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_creerReservation = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAnnulerLocation = new System.Windows.Forms.Button();
+            this.DGVClient = new System.Windows.Forms.DataGridView();
+            this.DGVVoiture = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_km = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grb_client.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVoiture)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_client
             // 
-            this.grb_client.Controls.Add(this.button2);
+            this.grb_client.Controls.Add(this.btnChercheClient);
             this.grb_client.Controls.Add(this.txt_prenom);
             this.grb_client.Controls.Add(this.txt_nom);
             this.grb_client.Controls.Add(this.txt_id);
             this.grb_client.Controls.Add(this.lbl_prenom);
             this.grb_client.Controls.Add(this.lbl_nom);
             this.grb_client.Controls.Add(this.lbl_id);
-            this.grb_client.Location = new System.Drawing.Point(11, 161);
+            this.grb_client.Location = new System.Drawing.Point(11, 154);
             this.grb_client.Margin = new System.Windows.Forms.Padding(2);
             this.grb_client.Name = "grb_client";
             this.grb_client.Padding = new System.Windows.Forms.Padding(2);
@@ -99,28 +91,38 @@ namespace wfa_MDD_TP3.Location_UI
             this.grb_client.TabStop = false;
             this.grb_client.Text = "Information client";
             // 
+            // btnChercheClient
+            // 
+            this.btnChercheClient.Location = new System.Drawing.Point(85, 118);
+            this.btnChercheClient.Name = "btnChercheClient";
+            this.btnChercheClient.Size = new System.Drawing.Size(134, 23);
+            this.btnChercheClient.TabIndex = 6;
+            this.btnChercheClient.Text = "Rechercher le client";
+            this.btnChercheClient.UseVisualStyleBackColor = true;
+            this.btnChercheClient.Click += new System.EventHandler(this.btnChercheClient_Click);
+            // 
             // txt_prenom
             // 
-            this.txt_prenom.Location = new System.Drawing.Point(68, 93);
+            this.txt_prenom.Location = new System.Drawing.Point(85, 93);
             this.txt_prenom.Margin = new System.Windows.Forms.Padding(2);
             this.txt_prenom.Name = "txt_prenom";
-            this.txt_prenom.Size = new System.Drawing.Size(151, 20);
+            this.txt_prenom.Size = new System.Drawing.Size(134, 20);
             this.txt_prenom.TabIndex = 5;
             // 
             // txt_nom
             // 
-            this.txt_nom.Location = new System.Drawing.Point(68, 60);
+            this.txt_nom.Location = new System.Drawing.Point(85, 60);
             this.txt_nom.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nom.Name = "txt_nom";
-            this.txt_nom.Size = new System.Drawing.Size(151, 20);
+            this.txt_nom.Size = new System.Drawing.Size(134, 20);
             this.txt_nom.TabIndex = 4;
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(68, 24);
+            this.txt_id.Location = new System.Drawing.Point(85, 24);
             this.txt_id.Margin = new System.Windows.Forms.Padding(2);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(151, 20);
+            this.txt_id.Size = new System.Drawing.Size(134, 20);
             this.txt_id.TabIndex = 3;
             // 
             // lbl_prenom
@@ -139,9 +141,9 @@ namespace wfa_MDD_TP3.Location_UI
             this.lbl_nom.Location = new System.Drawing.Point(4, 60);
             this.lbl_nom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nom.Name = "lbl_nom";
-            this.lbl_nom.Size = new System.Drawing.Size(35, 13);
+            this.lbl_nom.Size = new System.Drawing.Size(75, 13);
             this.lbl_nom.TabIndex = 1;
-            this.lbl_nom.Text = "Nom :";
+            this.lbl_nom.Text = "Nom complet :";
             // 
             // lbl_id
             // 
@@ -155,7 +157,7 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnChercheVoiture);
             this.groupBox1.Controls.Add(this.txt_annee);
             this.groupBox1.Controls.Add(this.lbl_annee);
             this.groupBox1.Controls.Add(this.txt_modele);
@@ -164,7 +166,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox1.Controls.Add(this.lbl_marque);
             this.groupBox1.Controls.Add(this.txt_serie);
             this.groupBox1.Controls.Add(this.lbl_serie);
-            this.groupBox1.Location = new System.Drawing.Point(11, 311);
+            this.groupBox1.Location = new System.Drawing.Point(11, 340);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -172,6 +174,16 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information véhicule";
+            // 
+            // btnChercheVoiture
+            // 
+            this.btnChercheVoiture.Location = new System.Drawing.Point(19, 132);
+            this.btnChercheVoiture.Name = "btnChercheVoiture";
+            this.btnChercheVoiture.Size = new System.Drawing.Size(200, 23);
+            this.btnChercheVoiture.TabIndex = 7;
+            this.btnChercheVoiture.Text = "Sélectionner le véhicule sélectionné";
+            this.btnChercheVoiture.UseVisualStyleBackColor = true;
+            this.btnChercheVoiture.Click += new System.EventHandler(this.btnChercheVoiture_Click);
             // 
             // txt_annee
             // 
@@ -239,53 +251,34 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txt_duree);
-            this.groupBox2.Controls.Add(this.lbl_duree);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpDateEnd);
+            this.groupBox2.Controls.Add(this.dtpDateStart);
             this.groupBox2.Controls.Add(this.lbl_retour);
             this.groupBox2.Controls.Add(this.lbl_emprunt);
             this.groupBox2.Location = new System.Drawing.Point(11, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(224, 145);
+            this.groupBox2.Size = new System.Drawing.Size(224, 102);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Durée location";
             // 
-            // txt_duree
+            // dtpDateEnd
             // 
-            this.txt_duree.Location = new System.Drawing.Point(94, 106);
-            this.txt_duree.Name = "txt_duree";
-            this.txt_duree.Size = new System.Drawing.Size(126, 20);
-            this.txt_duree.TabIndex = 16;
+            this.dtpDateEnd.Location = new System.Drawing.Point(94, 67);
+            this.dtpDateEnd.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(126, 20);
+            this.dtpDateEnd.TabIndex = 3;
             // 
-            // lbl_duree
+            // dtpDateStart
             // 
-            this.lbl_duree.AutoSize = true;
-            this.lbl_duree.Location = new System.Drawing.Point(5, 105);
-            this.lbl_duree.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_duree.Name = "lbl_duree";
-            this.lbl_duree.Size = new System.Drawing.Size(42, 13);
-            this.lbl_duree.TabIndex = 4;
-            this.lbl_duree.Text = "Durée :";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(94, 67);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 27);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpDateStart.Location = new System.Drawing.Point(94, 27);
+            this.dtpDateStart.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(126, 20);
+            this.dtpDateStart.TabIndex = 2;
             // 
             // lbl_retour
             // 
@@ -309,114 +302,18 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txt_total);
-            this.groupBox3.Controls.Add(this.txt_tvq);
-            this.groupBox3.Controls.Add(this.txt_tps);
+            this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.txt_km);
-            this.groupBox3.Controls.Add(this.txt_location);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(11, 475);
+            this.groupBox3.Location = new System.Drawing.Point(11, 526);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(224, 173);
+            this.groupBox3.Size = new System.Drawing.Size(224, 93);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Facturation";
-            // 
-            // txt_total
-            // 
-            this.txt_total.Location = new System.Drawing.Point(68, 131);
-            this.txt_total.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_total.Name = "txt_total";
-            this.txt_total.Size = new System.Drawing.Size(151, 20);
-            this.txt_total.TabIndex = 14;
-            // 
-            // txt_tvq
-            // 
-            this.txt_tvq.Location = new System.Drawing.Point(68, 106);
-            this.txt_tvq.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_tvq.Name = "txt_tvq";
-            this.txt_tvq.Size = new System.Drawing.Size(151, 20);
-            this.txt_tvq.TabIndex = 13;
-            // 
-            // txt_tps
-            // 
-            this.txt_tps.Location = new System.Drawing.Point(68, 82);
-            this.txt_tps.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_tps.Name = "txt_tps";
-            this.txt_tps.Size = new System.Drawing.Size(151, 20);
-            this.txt_tps.TabIndex = 12;
-            // 
-            // txt_km
-            // 
-            this.txt_km.Location = new System.Drawing.Point(68, 57);
-            this.txt_km.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_km.Name = "txt_km";
-            this.txt_km.Size = new System.Drawing.Size(151, 20);
-            this.txt_km.TabIndex = 11;
-            // 
-            // txt_location
-            // 
-            this.txt_location.Location = new System.Drawing.Point(68, 32);
-            this.txt_location.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(151, 20);
-            this.txt_location.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 131);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Total :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 106);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "TVQ :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "TPS :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Prix/Km :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Location :";
             // 
             // btn_creerReservation
             // 
@@ -427,10 +324,11 @@ namespace wfa_MDD_TP3.Location_UI
             this.btn_creerReservation.TabIndex = 4;
             this.btn_creerReservation.Text = "Créer la réservation";
             this.btn_creerReservation.UseVisualStyleBackColor = true;
+            this.btn_creerReservation.Click += new System.EventHandler(this.btn_creerReservation_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnAnnulerLocation);
             this.groupBox4.Controls.Add(this.btn_creerReservation);
             this.groupBox4.Location = new System.Drawing.Point(264, 480);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
@@ -441,49 +339,33 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Options";
             // 
-            // button1
+            // btnAnnulerLocation
             // 
-            this.button1.Location = new System.Drawing.Point(4, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(732, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Annuler la réservation";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAnnulerLocation.Location = new System.Drawing.Point(4, 91);
+            this.btnAnnulerLocation.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnnulerLocation.Name = "btnAnnulerLocation";
+            this.btnAnnulerLocation.Size = new System.Drawing.Size(732, 48);
+            this.btnAnnulerLocation.TabIndex = 5;
+            this.btnAnnulerLocation.Text = "Annuler la réservation";
+            this.btnAnnulerLocation.UseVisualStyleBackColor = true;
+            this.btnAnnulerLocation.Click += new System.EventHandler(this.btnAnnulerLocation_Click);
             // 
-            // button2
+            // DGVClient
             // 
-            this.button2.Location = new System.Drawing.Point(85, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Rechercher le client";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DGVClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVClient.Location = new System.Drawing.Point(264, 27);
+            this.DGVClient.Name = "DGVClient";
+            this.DGVClient.Size = new System.Drawing.Size(740, 214);
+            this.DGVClient.TabIndex = 7;
+            this.DGVClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVClient_CellContentClick);
             // 
-            // button3
+            // DGVVoiture
             // 
-            this.button3.Location = new System.Drawing.Point(85, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Rechercher le client";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(264, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(740, 214);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(264, 260);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(740, 215);
-            this.dataGridView2.TabIndex = 8;
+            this.DGVVoiture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVVoiture.Location = new System.Drawing.Point(264, 260);
+            this.DGVVoiture.Name = "DGVVoiture";
+            this.DGVVoiture.Size = new System.Drawing.Size(740, 215);
+            this.DGVVoiture.TabIndex = 8;
             // 
             // label6
             // 
@@ -503,6 +385,44 @@ namespace wfa_MDD_TP3.Location_UI
             this.label7.TabIndex = 10;
             this.label7.Text = "Information sur la voiture";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Methode de paiment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Montant payer :";
+            // 
+            // txt_km
+            // 
+            this.txt_km.Location = new System.Drawing.Point(85, 57);
+            this.txt_km.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_km.Name = "txt_km";
+            this.txt_km.Size = new System.Drawing.Size(134, 20);
+            this.txt_km.TabIndex = 11;
+            this.txt_km.TextChanged += new System.EventHandler(this.txt_km_TextChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(114, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // AjouterLocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,8 +430,8 @@ namespace wfa_MDD_TP3.Location_UI
             this.ClientSize = new System.Drawing.Size(1030, 683);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVVoiture);
+            this.Controls.Add(this.DGVClient);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -530,8 +450,8 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVoiture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,31 +476,23 @@ namespace wfa_MDD_TP3.Location_UI
         private System.Windows.Forms.TextBox txt_serie;
         private System.Windows.Forms.Label lbl_serie;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txt_duree;
-        private System.Windows.Forms.Label lbl_duree;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        private System.Windows.Forms.DateTimePicker dtpDateStart;
         private System.Windows.Forms.Label lbl_retour;
         private System.Windows.Forms.Label lbl_emprunt;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_total;
-        private System.Windows.Forms.TextBox txt_tvq;
-        private System.Windows.Forms.TextBox txt_tps;
-        private System.Windows.Forms.TextBox txt_km;
-        private System.Windows.Forms.TextBox txt_location;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_creerReservation;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnAnnulerLocation;
+        private System.Windows.Forms.Button btnChercheClient;
+        private System.Windows.Forms.Button btnChercheVoiture;
+        private System.Windows.Forms.DataGridView DGVClient;
+        private System.Windows.Forms.DataGridView DGVVoiture;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_km;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

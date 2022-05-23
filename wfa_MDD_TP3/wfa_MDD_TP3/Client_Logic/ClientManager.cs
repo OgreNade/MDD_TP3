@@ -38,5 +38,9 @@ namespace wfa_MDD_TP3.Client_Logic
             clients.Add(nouveauClient);
             NouveauId++;
         }
+        public List<Client> GetAllClients()
+        {
+            return clients;
+        }
     }
 }

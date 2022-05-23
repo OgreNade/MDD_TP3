@@ -52,9 +52,9 @@ namespace wfa_MDD_TP3.Location_UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.Size = new System.Drawing.Size(199, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Recherche de location";
+            this.label1.Text = "Recherche de location par nom du client";
             // 
             // btnRechercheLocation
             // 
@@ -64,6 +64,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnRechercheLocation.TabIndex = 2;
             this.btnRechercheLocation.Text = "Rechercher location";
             this.btnRechercheLocation.UseVisualStyleBackColor = true;
+            this.btnRechercheLocation.Click += new System.EventHandler(this.btnRechercheLocation_Click);
             // 
             // dataGridView1
             // 
@@ -81,6 +82,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnAfficherTouteLocation.TabIndex = 4;
             this.btnAfficherTouteLocation.Text = "Afficher toute les locations";
             this.btnAfficherTouteLocation.UseVisualStyleBackColor = true;
+            this.btnAfficherTouteLocation.Click += new System.EventHandler(this.btnAfficherTouteLocation_Click);
             // 
             // btnAjouterLocation
             // 
@@ -90,6 +92,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnAjouterLocation.TabIndex = 5;
             this.btnAjouterLocation.Text = "Ajouter une location";
             this.btnAjouterLocation.UseVisualStyleBackColor = true;
+            this.btnAjouterLocation.Click += new System.EventHandler(this.btnAjouterLocation_Click);
             // 
             // btnModifierLocation
             // 
@@ -124,6 +127,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.Controls.Add(this.textBox1);
             this.Name = "GestionLocationForm";
             this.Text = "GestionLocationForm";
+            this.Load += new System.EventHandler(this.GestionLocationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

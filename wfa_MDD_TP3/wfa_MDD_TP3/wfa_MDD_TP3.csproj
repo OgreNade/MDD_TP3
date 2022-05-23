@@ -72,6 +72,10 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Location_Logic\Etat.cs" />
+    <Compile Include="Location_Logic\Inspection.cs" />
+    <Compile Include="Location_Logic\Location.cs" />
+    <Compile Include="Location_Logic\SystemeDeLocation.cs" />
     <Compile Include="Location_UI\AjouterLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,8 +180,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Location_Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

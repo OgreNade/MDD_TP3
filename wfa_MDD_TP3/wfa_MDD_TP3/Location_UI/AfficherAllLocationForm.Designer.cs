@@ -58,6 +58,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnRechercher.TabIndex = 2;
             this.btnRechercher.Text = "Rechercher la location";
             this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
             // 
             // AfficherAllLocationForm
             // 
@@ -69,6 +70,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.Controls.Add(this.dataGridView1);
             this.Name = "AfficherAllLocationForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AfficherAllLocationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

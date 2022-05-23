@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using wfa_MDD_TP3.Client_Logic;
 using wfa_MDD_TP3.Vehicule_Logic;
+using wfa_MDD_TP3.Location_UI;
 
 namespace wfa_MDD_TP3
 {
@@ -36,6 +37,13 @@ namespace wfa_MDD_TP3
         {
             GestionClientsFrm gestionClientForm = new GestionClientsFrm();
             gestionClientForm.ShowDialog();
+
+        }
+
+        private void btnLocation_Click(object sender, EventArgs e)
+        {
+            GestionLocationForm gestionLocationForm = new GestionLocationForm(systemeGeneral.SystemeDeLocation, systemeGeneral.ClientManager, systemeGeneral.systemeDeVehicule);
+            gestionLocationForm.ShowDialog();
 
         }
     }
