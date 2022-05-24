@@ -10,21 +10,28 @@ using System.Windows.Forms;
 using wfa_MDD_TP3.Client_Logic;
 using wfa_MDD_TP3.Vehicule_Logic;
 using wfa_MDD_TP3.Location_UI;
+using wfa_MDD_TP3.Location_Logic;
 
 namespace wfa_MDD_TP3
 {
     public partial class MainForm : Form
     {
         SystemeGeneral systemeGeneral;
+        SystemeDeVehicule systemeDeVehicule;
+        SystemeDeLocation systemeDeLocation;
+        ClientManager clientManager;
         public MainForm(SystemeGeneral systemeGeneral)
         {
             InitializeComponent();
             this.systemeGeneral = systemeGeneral;
+            this.systemeDeVehicule = this.systemeGeneral.systemeDeVehicule;
+            this.systemeDeLocation = this.systemeGeneral.SystemeDeLocation;
+            this.clientManager = this.systemeGeneral.ClientManager;
         }
 
         private void btnGestionVehicule_Click(object sender, EventArgs e)
         {
-            GestionVehiculeForm gestionVehiculeForm = new GestionVehiculeForm(systemeGeneral.systemeDeVehicule);
+            GestionVehiculeForm gestionVehiculeForm = new GestionVehiculeForm(systemeDeVehicule);
             gestionVehiculeForm.ShowDialog();
         }
 
@@ -35,14 +42,14 @@ namespace wfa_MDD_TP3
 
         private void btn_GestionClient_Click(object sender, EventArgs e)
         {
-            GestionClientsFrm gestionClientForm = new GestionClientsFrm();
+            GestionClientsFrm gestionClientForm = new GestionClientsFrm(clientManager);
             gestionClientForm.ShowDialog();
 
         }
 
         private void btnLocation_Click(object sender, EventArgs e)
         {
-            GestionLocationForm gestionLocationForm = new GestionLocationForm(systemeGeneral.SystemeDeLocation, systemeGeneral.ClientManager, systemeGeneral.systemeDeVehicule);
+            GestionLocationForm gestionLocationForm = new GestionLocationForm(systemeDeLocation, clientManager, systemeDeVehicule);
             gestionLocationForm.ShowDialog();
 
         }

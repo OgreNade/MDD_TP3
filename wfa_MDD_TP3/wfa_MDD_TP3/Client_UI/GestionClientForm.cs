@@ -7,11 +7,11 @@ namespace wfa_MDD_TP3.Client_Logic
     public partial class GestionClientsFrm : Form
     {
         ClientManager ClientManager;
-        public GestionClientsFrm()
+        public GestionClientsFrm(ClientManager clientManager)
         {
             InitializeComponent();
             RemplirDgvHardCoder();
-            ClientManager = new ClientManager();
+            this.ClientManager = clientManager;
             btnRechercher.Enabled = false;
             RemplirCmbRecherchePar();
         }
