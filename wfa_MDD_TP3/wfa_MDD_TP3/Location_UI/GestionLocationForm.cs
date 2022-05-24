@@ -29,6 +29,8 @@ namespace wfa_MDD_TP3.Location_UI
         private void GestionLocationForm_Load(object sender, EventArgs e)
         {
             AfficheLocations("");
+            btnModifierLocation.Enabled = false;
+            btnSupprimerLocation.Enabled = false;
         }
         private void AfficheLocations(string filtre)
         {
@@ -78,6 +80,30 @@ namespace wfa_MDD_TP3.Location_UI
         {
             AjouterLocationForm ajouterLocationForm = new AjouterLocationForm(systemeDeLocation, systemeDeVehicule, clientManager);
             ajouterLocationForm.ShowDialog();
+            AfficheLocations("");
+        }
+
+        private void btnModifierLocation_Click(object sender, EventArgs e)
+        {
+            int noLocation = Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value);
+            ModifierLocationForm modifierLocationForm = new ModifierLocationForm(systemeDeLocation, systemeDeVehicule, clientManager, noLocation);
+            modifierLocationForm.ShowDialog();
+            AfficheLocations("");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnModifierLocation.Enabled = true;
+            btnSupprimerLocation.Enabled = true;
+        }
+
+        private void btnSupprimerLocation_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez vous vraiment supprimer cette location?", "Location prestige", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                systemeDeLocation.SupprimerLocation(Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value));
+                AfficheLocations("");
+            }
         }
     }
 }

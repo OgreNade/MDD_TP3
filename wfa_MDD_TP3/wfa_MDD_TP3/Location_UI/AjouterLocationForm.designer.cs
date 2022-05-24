@@ -53,6 +53,10 @@ namespace wfa_MDD_TP3.Location_UI
             this.lbl_retour = new System.Windows.Forms.Label();
             this.lbl_emprunt = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_km = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_creerReservation = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAnnulerLocation = new System.Windows.Forms.Button();
@@ -60,10 +64,6 @@ namespace wfa_MDD_TP3.Location_UI
             this.DGVVoiture = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_km = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grb_client.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,6 +116,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.Size = new System.Drawing.Size(134, 20);
             this.txt_nom.TabIndex = 4;
+            this.txt_nom.TextChanged += new System.EventHandler(this.txt_nom_TextChanged);
             // 
             // txt_id
             // 
@@ -271,6 +272,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.dtpDateEnd.Name = "dtpDateEnd";
             this.dtpDateEnd.Size = new System.Drawing.Size(126, 20);
             this.dtpDateEnd.TabIndex = 3;
+            this.dtpDateEnd.ValueChanged += new System.EventHandler(this.dtpDateEnd_ValueChanged);
             // 
             // dtpDateStart
             // 
@@ -279,6 +281,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.dtpDateStart.Name = "dtpDateStart";
             this.dtpDateStart.Size = new System.Drawing.Size(126, 20);
             this.dtpDateStart.TabIndex = 2;
+            this.dtpDateStart.ValueChanged += new System.EventHandler(this.dtpDateStart_ValueChanged);
             // 
             // lbl_retour
             // 
@@ -314,6 +317,44 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Facturation";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(114, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // txt_km
+            // 
+            this.txt_km.Location = new System.Drawing.Point(85, 57);
+            this.txt_km.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_km.Name = "txt_km";
+            this.txt_km.Size = new System.Drawing.Size(134, 20);
+            this.txt_km.TabIndex = 11;
+            this.txt_km.TextChanged += new System.EventHandler(this.txt_km_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Montant payer :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Methode de paiment";
             // 
             // btn_creerReservation
             // 
@@ -385,44 +426,6 @@ namespace wfa_MDD_TP3.Location_UI
             this.label7.TabIndex = 10;
             this.label7.Text = "Information sur la voiture";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Methode de paiment";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Montant payer :";
-            // 
-            // txt_km
-            // 
-            this.txt_km.Location = new System.Drawing.Point(85, 57);
-            this.txt_km.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_km.Name = "txt_km";
-            this.txt_km.Size = new System.Drawing.Size(134, 20);
-            this.txt_km.TabIndex = 11;
-            this.txt_km.TextChanged += new System.EventHandler(this.txt_km_TextChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 21);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // AjouterLocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +443,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AjouterLocationForm";
             this.Text = "LocationInterface";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjouterLocationForm_FormClosing);
             this.Load += new System.EventHandler(this.LocationInterface_Load);
             this.grb_client.ResumeLayout(false);
             this.grb_client.PerformLayout();

@@ -37,8 +37,8 @@ namespace wfa_MDD_TP3.Location_UI
             this.lbl_nom = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTPEnd = new System.Windows.Forms.DateTimePicker();
+            this.DTPStart = new System.Windows.Forms.DateTimePicker();
             this.lbl_retour = new System.Windows.Forms.Label();
             this.lbl_emprunt = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,27 +52,39 @@ namespace wfa_MDD_TP3.Location_UI
             this.txt_serie = new System.Windows.Forms.TextBox();
             this.lbl_serie = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_total = new System.Windows.Forms.TextBox();
-            this.txt_tvq = new System.Windows.Forms.TextBox();
-            this.txt_tps = new System.Windows.Forms.TextBox();
             this.txt_km = new System.Windows.Forms.TextBox();
-            this.txt_location = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvInspectionAvant = new System.Windows.Forms.DataGridView();
+            this.dgvInspectionApres = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnBlockInspectionAvant = new System.Windows.Forms.Button();
+            this.btnAjouterInspectionAvant = new System.Windows.Forms.Button();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.cmbMethodePaiment = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotalPayer = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnAjouterInspectionApres = new System.Windows.Forms.Button();
+            this.dgvVoiture = new System.Windows.Forms.DataGridView();
+            this.txtInspectionDescriptionAvant = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtInspectionCarPartAvant = new System.Windows.Forms.TextBox();
+            this.btnAddInspectionAvant = new System.Windows.Forms.Button();
+            this.btnAddInspectionApres = new System.Windows.Forms.Button();
+            this.txtInspectionCarPartApres = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtInspectionDescriptionApres = new System.Windows.Forms.TextBox();
             this.grb_client.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectionAvant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectionApres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVoiture)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_client
@@ -148,8 +160,8 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.DTPEnd);
+            this.groupBox2.Controls.Add(this.DTPStart);
             this.groupBox2.Controls.Add(this.lbl_retour);
             this.groupBox2.Controls.Add(this.lbl_emprunt);
             this.groupBox2.Location = new System.Drawing.Point(11, 142);
@@ -161,21 +173,21 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Durée location";
             // 
-            // dateTimePicker2
+            // DTPEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(94, 67);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.DTPEnd.Location = new System.Drawing.Point(94, 67);
+            this.DTPEnd.Margin = new System.Windows.Forms.Padding(2);
+            this.DTPEnd.Name = "DTPEnd";
+            this.DTPEnd.Size = new System.Drawing.Size(126, 20);
+            this.DTPEnd.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // DTPStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 27);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.DTPStart.Location = new System.Drawing.Point(94, 27);
+            this.DTPStart.Margin = new System.Windows.Forms.Padding(2);
+            this.DTPStart.Name = "DTPStart";
+            this.DTPStart.Size = new System.Drawing.Size(126, 20);
+            this.DTPStart.TabIndex = 2;
             // 
             // lbl_retour
             // 
@@ -219,12 +231,13 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(85, 132);
+            this.button3.Location = new System.Drawing.Point(68, 132);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 23);
+            this.button3.Size = new System.Drawing.Size(151, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Rechercher le client";
+            this.button3.Text = "Prendre une nouvelle voiture";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txt_annee
             // 
@@ -292,130 +305,68 @@ namespace wfa_MDD_TP3.Location_UI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txt_total);
-            this.groupBox3.Controls.Add(this.txt_tvq);
-            this.groupBox3.Controls.Add(this.txt_tps);
-            this.groupBox3.Controls.Add(this.txt_km);
-            this.groupBox3.Controls.Add(this.txt_location);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.txtTotal);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.txtTotalPayer);
             this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.cmbMethodePaiment);
+            this.groupBox3.Controls.Add(this.txt_km);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(11, 408);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(224, 173);
+            this.groupBox3.Size = new System.Drawing.Size(224, 122);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Facturation";
             // 
-            // txt_total
-            // 
-            this.txt_total.Location = new System.Drawing.Point(68, 131);
-            this.txt_total.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_total.Name = "txt_total";
-            this.txt_total.Size = new System.Drawing.Size(151, 20);
-            this.txt_total.TabIndex = 14;
-            // 
-            // txt_tvq
-            // 
-            this.txt_tvq.Location = new System.Drawing.Point(68, 106);
-            this.txt_tvq.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_tvq.Name = "txt_tvq";
-            this.txt_tvq.Size = new System.Drawing.Size(151, 20);
-            this.txt_tvq.TabIndex = 13;
-            // 
-            // txt_tps
-            // 
-            this.txt_tps.Location = new System.Drawing.Point(68, 82);
-            this.txt_tps.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_tps.Name = "txt_tps";
-            this.txt_tps.Size = new System.Drawing.Size(151, 20);
-            this.txt_tps.TabIndex = 12;
-            // 
             // txt_km
             // 
-            this.txt_km.Location = new System.Drawing.Point(68, 57);
+            this.txt_km.Location = new System.Drawing.Point(94, 63);
             this.txt_km.Margin = new System.Windows.Forms.Padding(2);
             this.txt_km.Name = "txt_km";
-            this.txt_km.Size = new System.Drawing.Size(151, 20);
+            this.txt_km.Size = new System.Drawing.Size(125, 20);
             this.txt_km.TabIndex = 11;
-            // 
-            // txt_location
-            // 
-            this.txt_location.Location = new System.Drawing.Point(68, 32);
-            this.txt_location.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(151, 20);
-            this.txt_location.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 131);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Total :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 106);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "TVQ :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "TPS :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 57);
+            this.label2.Location = new System.Drawing.Point(5, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Prix/Km :";
+            this.label2.Text = "Kilometrage fin :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 32);
+            this.label1.Location = new System.Drawing.Point(5, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Location :";
+            this.label1.Text = "Methode de paiment :";
             // 
-            // dataGridView1
+            // dgvInspectionAvant
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(240, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 255);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvInspectionAvant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInspectionAvant.Location = new System.Drawing.Point(240, 27);
+            this.dgvInspectionAvant.Name = "dgvInspectionAvant";
+            this.dgvInspectionAvant.Size = new System.Drawing.Size(548, 255);
+            this.dgvInspectionAvant.TabIndex = 6;
+            this.dgvInspectionAvant.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInspectionAvant_CellEndEdit);
             // 
-            // dataGridView2
+            // dgvInspectionApres
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(240, 319);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(548, 255);
-            this.dataGridView2.TabIndex = 7;
+            this.dgvInspectionApres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInspectionApres.Location = new System.Drawing.Point(240, 319);
+            this.dgvInspectionApres.Name = "dgvInspectionApres";
+            this.dgvInspectionApres.Size = new System.Drawing.Size(548, 255);
+            this.dgvInspectionApres.TabIndex = 7;
+            this.dgvInspectionApres.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInspectionApres_CellEndEdit);
             // 
             // label6
             // 
@@ -435,31 +386,200 @@ namespace wfa_MDD_TP3.Location_UI
             this.label7.TabIndex = 9;
             this.label7.Text = "Inspection après la location";
             // 
-            // btnBlockInspectionAvant
+            // btnAjouterInspectionAvant
             // 
-            this.btnBlockInspectionAvant.Location = new System.Drawing.Point(602, 288);
-            this.btnBlockInspectionAvant.Name = "btnBlockInspectionAvant";
-            this.btnBlockInspectionAvant.Size = new System.Drawing.Size(186, 23);
-            this.btnBlockInspectionAvant.TabIndex = 10;
-            this.btnBlockInspectionAvant.Text = "Finir l\'inspection avant la location";
-            this.btnBlockInspectionAvant.UseVisualStyleBackColor = true;
+            this.btnAjouterInspectionAvant.Location = new System.Drawing.Point(382, 290);
+            this.btnAjouterInspectionAvant.Name = "btnAjouterInspectionAvant";
+            this.btnAjouterInspectionAvant.Size = new System.Drawing.Size(201, 23);
+            this.btnAjouterInspectionAvant.TabIndex = 10;
+            this.btnAjouterInspectionAvant.Text = "Ajouter une inspection avant la location";
+            this.btnAjouterInspectionAvant.UseVisualStyleBackColor = true;
+            this.btnAjouterInspectionAvant.Click += new System.EventHandler(this.btnAjouterInspectionAvant_Click);
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Location = new System.Drawing.Point(11, 535);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(224, 39);
+            this.btnEnregistrer.TabIndex = 11;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
+            // cmbMethodePaiment
+            // 
+            this.cmbMethodePaiment.FormattingEnabled = true;
+            this.cmbMethodePaiment.Location = new System.Drawing.Point(119, 13);
+            this.cmbMethodePaiment.Name = "cmbMethodePaiment";
+            this.cmbMethodePaiment.Size = new System.Drawing.Size(100, 21);
+            this.cmbMethodePaiment.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Total payer";
+            // 
+            // txtTotalPayer
+            // 
+            this.txtTotalPayer.Location = new System.Drawing.Point(94, 40);
+            this.txtTotalPayer.Name = "txtTotalPayer";
+            this.txtTotalPayer.Size = new System.Drawing.Size(125, 20);
+            this.txtTotalPayer.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Calculer Total";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(94, 89);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(125, 20);
+            this.txtTotal.TabIndex = 16;
+            // 
+            // btnAjouterInspectionApres
+            // 
+            this.btnAjouterInspectionApres.Location = new System.Drawing.Point(589, 290);
+            this.btnAjouterInspectionApres.Name = "btnAjouterInspectionApres";
+            this.btnAjouterInspectionApres.Size = new System.Drawing.Size(200, 23);
+            this.btnAjouterInspectionApres.TabIndex = 12;
+            this.btnAjouterInspectionApres.Text = "Ajouter une inspection après la location";
+            this.btnAjouterInspectionApres.UseVisualStyleBackColor = true;
+            this.btnAjouterInspectionApres.Click += new System.EventHandler(this.btnAjouterInspectionApres_Click);
+            // 
+            // dgvVoiture
+            // 
+            this.dgvVoiture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVoiture.Location = new System.Drawing.Point(240, 27);
+            this.dgvVoiture.Name = "dgvVoiture";
+            this.dgvVoiture.Size = new System.Drawing.Size(548, 547);
+            this.dgvVoiture.TabIndex = 13;
+            this.dgvVoiture.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVoiture_CellContentClick);
+            // 
+            // txtInspectionDescriptionAvant
+            // 
+            this.txtInspectionDescriptionAvant.Location = new System.Drawing.Point(487, 451);
+            this.txtInspectionDescriptionAvant.Name = "txtInspectionDescriptionAvant";
+            this.txtInspectionDescriptionAvant.Size = new System.Drawing.Size(126, 20);
+            this.txtInspectionDescriptionAvant.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(484, 429);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Description";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(314, 429);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Partie de la voiture";
+            // 
+            // txtInspectionCarPartAvant
+            // 
+            this.txtInspectionCarPartAvant.Location = new System.Drawing.Point(317, 451);
+            this.txtInspectionCarPartAvant.Name = "txtInspectionCarPartAvant";
+            this.txtInspectionCarPartAvant.Size = new System.Drawing.Size(133, 20);
+            this.txtInspectionCarPartAvant.TabIndex = 18;
+            // 
+            // btnAddInspectionAvant
+            // 
+            this.btnAddInspectionAvant.Location = new System.Drawing.Point(399, 490);
+            this.btnAddInspectionAvant.Name = "btnAddInspectionAvant";
+            this.btnAddInspectionAvant.Size = new System.Drawing.Size(132, 23);
+            this.btnAddInspectionAvant.TabIndex = 19;
+            this.btnAddInspectionAvant.Text = "Ajouter l\'inspection";
+            this.btnAddInspectionAvant.UseVisualStyleBackColor = true;
+            this.btnAddInspectionAvant.Click += new System.EventHandler(this.btnAddInspectionAvant_Click);
+            // 
+            // btnAddInspectionApres
+            // 
+            this.btnAddInspectionApres.Location = new System.Drawing.Point(412, 170);
+            this.btnAddInspectionApres.Name = "btnAddInspectionApres";
+            this.btnAddInspectionApres.Size = new System.Drawing.Size(132, 23);
+            this.btnAddInspectionApres.TabIndex = 24;
+            this.btnAddInspectionApres.Text = "Ajouter l\'inspection";
+            this.btnAddInspectionApres.UseVisualStyleBackColor = true;
+            this.btnAddInspectionApres.Click += new System.EventHandler(this.btnAddInspectionApres_Click);
+            // 
+            // txtInspectionCarPartApres
+            // 
+            this.txtInspectionCarPartApres.Location = new System.Drawing.Point(330, 131);
+            this.txtInspectionCarPartApres.Name = "txtInspectionCarPartApres";
+            this.txtInspectionCarPartApres.Size = new System.Drawing.Size(133, 20);
+            this.txtInspectionCarPartApres.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(327, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Partie de la voiture";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(497, 109);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Description";
+            // 
+            // txtInspectionDescriptionApres
+            // 
+            this.txtInspectionDescriptionApres.Location = new System.Drawing.Point(500, 131);
+            this.txtInspectionDescriptionApres.Name = "txtInspectionDescriptionApres";
+            this.txtInspectionDescriptionApres.Size = new System.Drawing.Size(126, 20);
+            this.txtInspectionDescriptionApres.TabIndex = 20;
             // 
             // ModifierLocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 586);
-            this.Controls.Add(this.btnBlockInspectionAvant);
+            this.Controls.Add(this.btnAddInspectionApres);
+            this.Controls.Add(this.txtInspectionCarPartApres);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtInspectionDescriptionApres);
+            this.Controls.Add(this.btnAddInspectionAvant);
+            this.Controls.Add(this.txtInspectionCarPartAvant);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtInspectionDescriptionAvant);
+            this.Controls.Add(this.dgvVoiture);
+            this.Controls.Add(this.btnAjouterInspectionApres);
+            this.Controls.Add(this.btnEnregistrer);
+            this.Controls.Add(this.btnAjouterInspectionAvant);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInspectionApres);
+            this.Controls.Add(this.dgvInspectionAvant);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grb_client);
             this.Name = "ModifierLocationForm";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.ModifierLocationForm_Load);
             this.grb_client.ResumeLayout(false);
             this.grb_client.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -468,8 +588,9 @@ namespace wfa_MDD_TP3.Location_UI
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectionAvant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectionApres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVoiture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,8 +606,8 @@ namespace wfa_MDD_TP3.Location_UI
         private System.Windows.Forms.Label lbl_nom;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTPEnd;
+        private System.Windows.Forms.DateTimePicker DTPStart;
         private System.Windows.Forms.Label lbl_retour;
         private System.Windows.Forms.Label lbl_emprunt;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -500,20 +621,31 @@ namespace wfa_MDD_TP3.Location_UI
         private System.Windows.Forms.TextBox txt_serie;
         private System.Windows.Forms.Label lbl_serie;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_total;
-        private System.Windows.Forms.TextBox txt_tvq;
-        private System.Windows.Forms.TextBox txt_tps;
         private System.Windows.Forms.TextBox txt_km;
-        private System.Windows.Forms.TextBox txt_location;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvInspectionAvant;
+        private System.Windows.Forms.DataGridView dgvInspectionApres;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnBlockInspectionAvant;
+        private System.Windows.Forms.Button btnAjouterInspectionAvant;
+        private System.Windows.Forms.Button btnEnregistrer;
+        private System.Windows.Forms.ComboBox cmbMethodePaiment;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTotalPayer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAjouterInspectionApres;
+        private System.Windows.Forms.DataGridView dgvVoiture;
+        private System.Windows.Forms.TextBox txtInspectionDescriptionAvant;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtInspectionCarPartAvant;
+        private System.Windows.Forms.Button btnAddInspectionAvant;
+        private System.Windows.Forms.Button btnAddInspectionApres;
+        private System.Windows.Forms.TextBox txtInspectionCarPartApres;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtInspectionDescriptionApres;
     }
 }

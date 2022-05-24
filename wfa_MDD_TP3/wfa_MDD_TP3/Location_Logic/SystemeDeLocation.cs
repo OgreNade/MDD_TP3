@@ -61,5 +61,17 @@ namespace wfa_MDD_TP3.Location_Logic
             }
             return futureLocations;
         }
+        public void ModifierLocation(Location location)
+        {
+            for (int i = 0; i < Locations.Count; i++)
+            {
+                if (Locations[i].NoLocation == location.NoLocation)
+                {
+                    Locations[i].ModifierLocation(location.DateEnd, location.NoSerie, location.KilometrageEnd, location.Etat, location.MethodePaiment, location.TotalAPayer, location.MontantPayer);
+                    Locations[i].AddInspectionStart(location.InspectionsStart.ToList());
+                    Locations[i].AddInspectionEnd(location.InspectionsEnd.ToList());
+                }
+            }
+        }
     }
 }

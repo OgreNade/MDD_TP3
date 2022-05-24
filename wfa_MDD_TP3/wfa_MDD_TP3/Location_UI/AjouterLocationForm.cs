@@ -39,6 +39,10 @@ namespace wfa_MDD_TP3.Location_UI
             comboBox1.Items.Add("Temps");
             btn_creerReservation.Enabled = false;
             txt_km.Enabled = false;
+            btnChercheClient.Enabled = false;
+            btnChercheVoiture.Enabled = false;
+            dtpDateEnd.Enabled = false;
+            txt_nom.Enabled = false;
         }
 
         private void btnChercheClient_Click(object sender, EventArgs e)
@@ -75,6 +79,7 @@ namespace wfa_MDD_TP3.Location_UI
             AfficheLocationClient();
             DGVClient.Enabled = false;
             DGVVoiture.DataSource = systemeDeVehicule.GetAllVehicules();
+            btnChercheVoiture.Enabled = true;
         }
         public void AfficheLocationClient()
         {
@@ -132,6 +137,7 @@ namespace wfa_MDD_TP3.Location_UI
             systemeDeLocation.AjouterLocation(location);
             MessageBox.Show("La location à été enregistrer dans la base de données");
             AfficheLocationClient();
+            this.Close();
         }
 
         private void btnAnnulerLocation_Click(object sender, EventArgs e)
@@ -140,6 +146,26 @@ namespace wfa_MDD_TP3.Location_UI
             {
                 this.Close();
             }
+        }
+
+        private void AjouterLocationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void dtpDateStart_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDateEnd.Enabled = true;
+        }
+
+        private void dtpDateEnd_ValueChanged(object sender, EventArgs e)
+        {
+            txt_nom.Enabled = true;
+        }
+
+        private void txt_nom_TextChanged(object sender, EventArgs e)
+        {
+            btnChercheClient.Enabled = true;
         }
     }
 }

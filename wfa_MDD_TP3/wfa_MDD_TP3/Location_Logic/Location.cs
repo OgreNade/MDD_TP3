@@ -63,6 +63,14 @@ namespace wfa_MDD_TP3.Location_Logic
         {
             InspectionsStart.Add(inspection);
         }
+        public void AddInspectionStart(List<Inspection> inspections)
+        {
+            InspectionsStart.Clear();
+            for (int i = 0; i < inspections.Count; i++)
+            {
+                InspectionsStart.Add(inspections[i]);
+            }
+        }
         public void ModifierInspectionStart(int NoInspection, string description)
         {
             for (int i = 0; i < InspectionsStart.Count; i++)
@@ -81,6 +89,14 @@ namespace wfa_MDD_TP3.Location_Logic
         public void AddInspectionEnd(Inspection inspection)
         {
             InspectionsEnd.Add(inspection);
+        }
+        public void AddInspectionEnd(List<Inspection> inspections)
+        {
+            InspectionsEnd.Clear();
+            for (int i = 0; i < inspections.Count; i++)
+            {
+                InspectionsEnd.Add(inspections[i]);
+            }
         }
         public void ModifierInspectionEnd(int NoInspection, string description)
         {

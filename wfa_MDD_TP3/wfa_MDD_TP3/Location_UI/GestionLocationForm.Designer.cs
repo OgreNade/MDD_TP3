@@ -73,6 +73,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(361, 298);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnAfficherTouteLocation
             // 
@@ -102,6 +103,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnModifierLocation.TabIndex = 6;
             this.btnModifierLocation.Text = "Modifier la location sélectionnée";
             this.btnModifierLocation.UseVisualStyleBackColor = true;
+            this.btnModifierLocation.Click += new System.EventHandler(this.btnModifierLocation_Click);
             // 
             // btnSupprimerLocation
             // 
@@ -111,6 +113,7 @@ namespace wfa_MDD_TP3.Location_UI
             this.btnSupprimerLocation.TabIndex = 7;
             this.btnSupprimerLocation.Text = "Supprimer la location sélectionnée";
             this.btnSupprimerLocation.UseVisualStyleBackColor = true;
+            this.btnSupprimerLocation.Click += new System.EventHandler(this.btnSupprimerLocation_Click);
             // 
             // GestionLocationForm
             // 
