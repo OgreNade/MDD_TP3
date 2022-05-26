@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace wfa_MDD_TP3.Connexion_Logic
 {
-    public class Utilisateur
+    public class Employee
     {
         public string EmailUtilisateur { get; set; }
         public string MDP_Utilisateur { get; set; }
-        public Utilisateur(string emailUtilisateur, string MDP_utilisateur)
+        public Employee(string emailUtilisateur, string MDP_utilisateur)
         {
             EmailUtilisateur = emailUtilisateur;
             MDP_Utilisateur = MDP_utilisateur;

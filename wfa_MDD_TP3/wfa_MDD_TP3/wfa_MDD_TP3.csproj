@@ -72,8 +72,10 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion_Logic\Utilisateur.cs" />
-    <Compile Include="Connexion_Logic\UtilisateurManager.cs" />
+    <Compile Include="Connexion_Logic\Employee.cs" />
+    <Compile Include="Connexion_Logic\EmployeeAdmin.cs" />
+    <Compile Include="Connexion_Logic\EmployeeNonAdmin.cs" />
+    <Compile Include="Connexion_Logic\EmployeeManager.cs" />
     <Compile Include="Location_Logic\Etat.cs" />
     <Compile Include="Location_Logic\Inspection.cs" />
     <Compile Include="Location_Logic\Location.cs" />

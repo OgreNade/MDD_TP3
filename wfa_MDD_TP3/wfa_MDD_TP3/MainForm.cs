@@ -20,7 +20,7 @@ namespace wfa_MDD_TP3
         SystemeGeneral systemeGeneral;
         SystemeDeVehicule systemeDeVehicule;
         SystemeDeLocation systemeDeLocation;
-        UtilisateurManager utilisateurManager;
+        EmployeeManager utilisateurManager;
         ClientManager clientManager;
         public MainForm(SystemeGeneral systemeGeneral)
         {

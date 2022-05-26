@@ -19,7 +19,7 @@ namespace wfa_MDD_TP3
             Application.SetCompatibleTextRenderingDefault(false);
 
             SystemeGeneral systemeGeneral = new SystemeGeneral();
-            UtilisateurManager utilisateurManager = new UtilisateurManager();
+            EmployeeManager utilisateurManager = new EmployeeManager();
 
             Application.Run(new Connexion(systemeGeneral));
         }

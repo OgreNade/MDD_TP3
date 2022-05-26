@@ -8,8 +8,8 @@ namespace wfa_MDD_TP3.Client_Logic
     public partial class GestionClientsFrm : Form
     {
         ClientManager ClientManager;
-        UtilisateurManager UtilisateurManager;
-        public GestionClientsFrm(UtilisateurManager utilisateurManager,ClientManager clientManager)
+        EmployeeManager UtilisateurManager;
+        public GestionClientsFrm(EmployeeManager utilisateurManager,ClientManager clientManager)
         {
             InitializeComponent();
             RemplirDgvHardCoder();

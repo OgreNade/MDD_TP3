@@ -22,18 +22,22 @@ namespace wfa_MDD_TP3
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            foreach (var utilisateur in SystemeGeneral.utilisateurManager.GetAllUtilisateur())
+            bool isConnected = false;
+            foreach (Employee utilisateur in SystemeGeneral.utilisateurManager.GetAllUtilisateur())
             {
                 if (utilisateur.EmailUtilisateur == txtEmail.Text && utilisateur.MDP_Utilisateur == txtMDP.Text)
                 {
                     MainForm mainForm = new MainForm(SystemeGeneral);
                     mainForm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Email ou mot de passe invalide");
-                }
+                    isConnected = true;
+                    Close();
+                } 
             }
+            if (!isConnected)
+            {
+                MessageBox.Show("Email ou mot de passe invalide");
+            }
+           
         }
 
         private void Connexion_Load(object sender, EventArgs e)

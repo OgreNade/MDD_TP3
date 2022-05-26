@@ -14,11 +14,11 @@ namespace wfa_MDD_TP3
     {
         public SystemeDeVehicule systemeDeVehicule { get; }
         public SystemeDeLocation SystemeDeLocation { get; }
-        public UtilisateurManager utilisateurManager { get; }
+        public EmployeeManager utilisateurManager { get; }
 
         public SystemeGeneral()
         {
-            utilisateurManager = new UtilisateurManager();
+            utilisateurManager = new EmployeeManager();
             systemeDeVehicule = new SystemeDeVehicule();
             SystemeDeLocation = new SystemeDeLocation();
         }
