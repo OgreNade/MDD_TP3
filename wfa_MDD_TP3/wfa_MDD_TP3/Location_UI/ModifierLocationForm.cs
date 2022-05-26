@@ -33,6 +33,10 @@ namespace wfa_MDD_TP3.Location_UI
 
         private void ModifierLocationForm_Load(object sender, EventArgs e)
         {
+            location = systemedelocation.GetLocationByNoLocation(noLocation);
+            client = clientmanager.GetClientParId(location.IdClient);
+            vehicule = systemedeVehicule.GetVehiculeByNoSerie(location.NoSerie);
+
             txt_id.Enabled = false;
             txt_nom.Enabled = false;
             txt_prenom.Enabled = false;
@@ -40,11 +44,11 @@ namespace wfa_MDD_TP3.Location_UI
             txt_marque.Enabled = false;
             txt_modele.Enabled = false;
             txt_annee.Enabled = false;
+            txtTotal.Enabled = false;
+
             cmbMethodePaiment.Items.Add("Kilometrage");
             cmbMethodePaiment.Items.Add("Temps");
-            location = systemedelocation.GetLocationByNoLocation(noLocation);
-            client = clientmanager.GetClientParId(location.IdClient);
-            vehicule = systemedeVehicule.GetVehiculeByNoSerie(location.NoSerie);
+
             txt_id.Text = client.IdClient.ToString();
             txt_nom.Text = client.Nom;
             txt_prenom.Text = client.Prenom;
@@ -56,26 +60,27 @@ namespace wfa_MDD_TP3.Location_UI
             txt_annee.Text = vehicule.Annee.ToString();
             cmbMethodePaiment.SelectedItem = location.MethodePaiment;
             txtTotalPayer.Text = location.MontantPayer.ToString();
-            dgvInspectionAvant.DataSource = location.InspectionsStart.ToList();
-            dgvInspectionApres.DataSource = location.InspectionsEnd.ToList();
-            dgvInspectionAvant.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvInspectionApres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            afficheDgvInspections();
+            dgvInspectionAvant.Enabled = true;
+            dgvInspectionApres.Enabled = true;
+
             dgvVoiture.Visible = false;
             dgvVoiture.DataSource = systemedeVehicule.GetAllVehicules().ToList();
             dgvVoiture.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            txtTotal.Enabled = false;
+
             label4.Visible = false;
             label5.Visible = false;
             label8.Visible = false;
             label9.Visible = false;
+
             txtInspectionCarPartAvant.Visible = false;
             txtInspectionDescriptionAvant.Visible = false;
             txtInspectionCarPartApres.Visible = false;
             txtInspectionDescriptionApres.Visible = false;
+
             btnAddInspectionAvant.Visible = false;
             btnAddInspectionApres.Visible = false;
-            dgvInspectionAvant.Enabled = true;
-            dgvInspectionApres.Enabled = true;
             btnEnregistrer.Enabled = false;
         }
 
