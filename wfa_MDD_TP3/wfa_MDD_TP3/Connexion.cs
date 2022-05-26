@@ -27,7 +27,7 @@ namespace wfa_MDD_TP3
             {
                 if (utilisateur.EmailUtilisateur == txtEmail.Text && utilisateur.MDP_Utilisateur == txtMDP.Text)
                 {
-                    MainForm mainForm = new MainForm(SystemeGeneral);
+                    MainForm mainForm = new MainForm(SystemeGeneral, utilisateur);
                     mainForm.ShowDialog();
                     isConnected = true;
                     Close();

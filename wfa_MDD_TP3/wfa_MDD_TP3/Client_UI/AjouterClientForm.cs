@@ -7,13 +7,13 @@ namespace wfa_MDD_TP3.Client_Logic
     public partial class AjouterClientForm : Form
     {
         ClientManager ClientManager;
-        EmployeeManager EmployeeManager;
+        Employee utilisateur;
 
-        public AjouterClientForm(ClientManager clientManager,EmployeeManager employeeManager)
+        public AjouterClientForm(ClientManager clientManager,Employee utilisateur)
         {
             InitializeComponent();
             this.ClientManager = clientManager;
-            this.EmployeeManager = employeeManager;
+            this.utilisateur = utilisateur;
         }
         private void RemplirCmb()
         {
@@ -100,7 +100,7 @@ namespace wfa_MDD_TP3.Client_Logic
         {
             RemplirCmb();
             txtDateCreationDossier.Text = DateTime.Now.ToShortDateString();
-            txtCreerPar.Text = EmployeeManager
+            txtCreerPar.Text = utilisateur.EmailUtilisateur;
         }
     }
 }

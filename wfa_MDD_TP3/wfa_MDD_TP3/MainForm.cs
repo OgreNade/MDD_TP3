@@ -22,13 +22,15 @@ namespace wfa_MDD_TP3
         SystemeDeLocation systemeDeLocation;
         EmployeeManager utilisateurManager;
         ClientManager clientManager;
-        public MainForm(SystemeGeneral systemeGeneral)
+        Employee utilisateur;
+        public MainForm(SystemeGeneral systemeGeneral, Employee utilisateur)
         {
             InitializeComponent();
             this.systemeGeneral = systemeGeneral;
             this.systemeDeVehicule = this.systemeGeneral.systemeDeVehicule;
             this.systemeDeLocation = this.systemeGeneral.SystemeDeLocation;
             this.utilisateurManager = utilisateurManager;
+            this.utilisateur = utilisateur;
             clientManager = new ClientManager();
         }
 
@@ -45,7 +47,7 @@ namespace wfa_MDD_TP3
 
         private void btn_GestionClient_Click(object sender, EventArgs e)
         {
-            GestionClientsFrm gestionClientForm = new GestionClientsFrm(utilisateurManager, clientManager);
+            GestionClientsFrm gestionClientForm = new GestionClientsFrm(utilisateur, clientManager);
             gestionClientForm.ShowDialog();
 
         }

@@ -8,13 +8,13 @@ namespace wfa_MDD_TP3.Client_Logic
     public partial class GestionClientsFrm : Form
     {
         ClientManager ClientManager;
-        EmployeeManager UtilisateurManager;
-        public GestionClientsFrm(EmployeeManager utilisateurManager,ClientManager clientManager)
+        Employee utilisateur;
+        public GestionClientsFrm(Employee utilisateur,ClientManager clientManager)
         {
             InitializeComponent();
             RemplirDgvHardCoder();
             this.ClientManager = clientManager;
-            this.UtilisateurManager = utilisateurManager;
+            this.utilisateur = utilisateur;
             btnRechercher.Enabled = false;
             RemplirCmbRecherchePar();
         }
@@ -88,7 +88,7 @@ namespace wfa_MDD_TP3.Client_Logic
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            AjouterClientForm ajouterClientForm = new AjouterClientForm(ClientManager,UtilisateurManager);
+            AjouterClientForm ajouterClientForm = new AjouterClientForm(ClientManager,utilisateur);
             ajouterClientForm.ShowDialog();
         }
 
