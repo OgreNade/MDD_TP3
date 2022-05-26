@@ -35,5 +35,10 @@ namespace wfa_MDD_TP3
                 }
             }
         }
+
+        private void Connexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
