@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using wfa_MDD_TP3.Connexion_Logic;
 
 namespace wfa_MDD_TP3.Client_Logic
 {
     public partial class GestionClientsFrm : Form
     {
         ClientManager ClientManager;
-        public GestionClientsFrm(ClientManager clientManager)
+        UtilisateurManager UtilisateurManager;
+        public GestionClientsFrm(UtilisateurManager utilisateurManager,ClientManager clientManager)
         {
             InitializeComponent();
             RemplirDgvHardCoder();
             this.ClientManager = clientManager;
+            this.UtilisateurManager = utilisateurManager;
             btnRechercher.Enabled = false;
             RemplirCmbRecherchePar();
         }

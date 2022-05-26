@@ -11,6 +11,7 @@ using wfa_MDD_TP3.Client_Logic;
 using wfa_MDD_TP3.Vehicule_Logic;
 using wfa_MDD_TP3.Location_UI;
 using wfa_MDD_TP3.Location_Logic;
+using wfa_MDD_TP3.Connexion_Logic;
 
 namespace wfa_MDD_TP3
 {
@@ -19,6 +20,7 @@ namespace wfa_MDD_TP3
         SystemeGeneral systemeGeneral;
         SystemeDeVehicule systemeDeVehicule;
         SystemeDeLocation systemeDeLocation;
+        UtilisateurManager utilisateurManager;
         ClientManager clientManager;
         public MainForm(SystemeGeneral systemeGeneral)
         {
@@ -26,7 +28,8 @@ namespace wfa_MDD_TP3
             this.systemeGeneral = systemeGeneral;
             this.systemeDeVehicule = this.systemeGeneral.systemeDeVehicule;
             this.systemeDeLocation = this.systemeGeneral.SystemeDeLocation;
-            this.clientManager = this.systemeGeneral.ClientManager;
+            this.utilisateurManager = utilisateurManager;
+            clientManager = new ClientManager();
         }
 
         private void btnGestionVehicule_Click(object sender, EventArgs e)
@@ -42,7 +45,7 @@ namespace wfa_MDD_TP3
 
         private void btn_GestionClient_Click(object sender, EventArgs e)
         {
-            GestionClientsFrm gestionClientForm = new GestionClientsFrm(clientManager);
+            GestionClientsFrm gestionClientForm = new GestionClientsFrm(utilisateurManager, clientManager);
             gestionClientForm.ShowDialog();
 
         }

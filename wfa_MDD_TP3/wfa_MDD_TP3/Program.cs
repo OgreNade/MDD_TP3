@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wfa_MDD_TP3.Connexion_Logic;
 
 namespace wfa_MDD_TP3
 {
@@ -18,6 +19,7 @@ namespace wfa_MDD_TP3
             Application.SetCompatibleTextRenderingDefault(false);
 
             SystemeGeneral systemeGeneral = new SystemeGeneral();
+            UtilisateurManager utilisateurManager = new UtilisateurManager();
 
             Application.Run(new Connexion(systemeGeneral));
         }

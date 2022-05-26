@@ -14,7 +14,6 @@ namespace wfa_MDD_TP3
     {
         public SystemeDeVehicule systemeDeVehicule { get; }
         public SystemeDeLocation SystemeDeLocation { get; }
-        public ClientManager ClientManager { get; }
         public UtilisateurManager utilisateurManager { get; }
 
         public SystemeGeneral()
@@ -22,7 +21,6 @@ namespace wfa_MDD_TP3
             utilisateurManager = new UtilisateurManager();
             systemeDeVehicule = new SystemeDeVehicule();
             SystemeDeLocation = new SystemeDeLocation();
-            ClientManager = new ClientManager();
         }
     }
 }
