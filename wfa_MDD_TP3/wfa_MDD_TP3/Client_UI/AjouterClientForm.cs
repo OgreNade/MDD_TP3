@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
+using wfa_MDD_TP3.Connexion_Logic;
 
 namespace wfa_MDD_TP3.Client_Logic
 {
     public partial class AjouterClientForm : Form
     {
         ClientManager ClientManager;
+        EmployeeManager EmployeeManager;
 
-        public AjouterClientForm(ClientManager clientManager)
+        public AjouterClientForm(ClientManager clientManager,EmployeeManager employeeManager)
         {
             InitializeComponent();
             this.ClientManager = clientManager;
+            this.EmployeeManager = employeeManager;
         }
         private void RemplirCmb()
         {
@@ -97,6 +100,7 @@ namespace wfa_MDD_TP3.Client_Logic
         {
             RemplirCmb();
             txtDateCreationDossier.Text = DateTime.Now.ToShortDateString();
+            txtCreerPar.Text = EmployeeManager
         }
     }
 }

@@ -88,7 +88,7 @@ namespace wfa_MDD_TP3.Client_Logic
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            AjouterClientForm ajouterClientForm = new AjouterClientForm(ClientManager);
+            AjouterClientForm ajouterClientForm = new AjouterClientForm(ClientManager,UtilisateurManager);
             ajouterClientForm.ShowDialog();
         }
 
