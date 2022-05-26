@@ -11,15 +11,28 @@ namespace wfa_MDD_TP3.Location_Logic
         private IList<Location> Locations;
         public SystemeDeLocation()
         {
-            List<Inspection> inspections = new List<Inspection>();
-            inspections.Add(new Inspection(0, "Aile droite", "Graffigne"));
-            inspections.Add(new Inspection(1, "Pare-brise", "Éclat dans le bas a droite"));
-            inspections.Add(new Inspection(2, "Siège passager", "Tache noir sur le dossier"));
-            inspections.Add(new Inspection(3, "Vitre arrière côté conducteur", "Le bouton ne fonctionne plus"));
+            List<Inspection> inspectionsAvant1 = new List<Inspection>();
+            inspectionsAvant1.Add(new Inspection(0, "Aile droite", "Graffigne"));
+            inspectionsAvant1.Add(new Inspection(1, "Pare-brise", "Éclat dans le bas a droite"));
+            inspectionsAvant1.Add(new Inspection(2, "Siège passager", "Tache noir sur le dossier"));
+
+            List<Inspection> inspectionsAprès1 = new List<Inspection>();
+            inspectionsAprès1.Add(new Inspection(0, "Aile droite", "Graffigne"));
+            inspectionsAprès1.Add(new Inspection(1, "Pare-brise", "Éclat dans le bas a droite"));
+            inspectionsAprès1.Add(new Inspection(2, "Siège passager", "Tache noir sur le dossier"));
+            inspectionsAprès1.Add(new Inspection(3, "Vitre arrière côté conducteur", "Le bouton ne fonctionne plus"));
+
+            List<Inspection> inspectionsAvant2 = new List<Inspection>();
+            inspectionsAvant2.Add(new Inspection(2, "Siège passager", "Tache noir sur le dossier"));
+
+            List<Inspection> inspectionsAprès2 = new List<Inspection>();
+            inspectionsAprès2.Add(new Inspection(1, "Pare-brise", "Éclat dans le bas a droite"));
+            inspectionsAprès2.Add(new Inspection(2, "Siège passager", "Tache noir sur le dossier"));
+            inspectionsAprès2.Add(new Inspection(3, "Vitre arrière côté conducteur", "Le bouton ne fonctionne plus"));
 
             Locations = new List<Location>();
-            Locations.Add(new Location(0, DateTime.Now.AddDays(2), DateTime.Now.AddDays(2), 3, "1ZVBP8CHXA5100001", 35078, 35078, Etat.Location, inspections, inspections, "kilometrage", 0, 15));
-            Locations.Add(new Location(1, DateTime.Now.AddDays(1), DateTime.Now.AddDays(1), 1, "1WPTY6G5VA23067HQ", 44583, 44583, Etat.Location, inspections, inspections, "jour", 0, 50));
+            Locations.Add(new Location(0, DateTime.Now.AddDays(2), DateTime.Now.AddDays(2), 3, "1ZVBP8CHXA5100001", 35078, 35078, Etat.Location, inspectionsAvant1, inspectionsAprès1, "kilometrage", 0, 15));
+            Locations.Add(new Location(1, DateTime.Now.AddDays(1), DateTime.Now.AddDays(1), 1, "1WPTY6G5VA23067HQ", 44583, 44583, Etat.Location, inspectionsAvant2, inspectionsAprès2, "jour", 0, 50));
         }
         
         public bool AjouterLocation(Location location)
