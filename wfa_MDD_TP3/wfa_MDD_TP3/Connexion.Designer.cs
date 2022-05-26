@@ -89,6 +89,7 @@ namespace wfa_MDD_TP3
             this.Controls.Add(this.btnConnexion);
             this.Name = "Connexion";
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.Connexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

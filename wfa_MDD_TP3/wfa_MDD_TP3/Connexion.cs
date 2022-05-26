@@ -16,5 +16,10 @@ namespace wfa_MDD_TP3
         {
             InitializeComponent();
         }
+
+        private void Connexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
