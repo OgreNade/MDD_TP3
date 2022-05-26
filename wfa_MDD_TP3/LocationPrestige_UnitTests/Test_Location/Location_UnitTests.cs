@@ -26,9 +26,11 @@ namespace LocationPrestige_UnitTests.Test_Location
         public void TestAjouterUneInspection()
         {
             Inspection inspection = new Inspection(0, "test", "test");
-            List<Inspection> inspections = new List<Inspection>();
-            inspections.Add(inspection);
-            Location locationTest = new Location(0, DateTime.Now.AddDays(2), DateTime.Now.AddDays(3), 0, "test", 0, 20, Etat.Location, inspections, inspections, "Kilometrage", 0, 0);
+            List<Inspection> inspectionsAvant = new List<Inspection>();
+            List<Inspection> inspectionsApres = new List<Inspection>();
+            inspectionsAvant.Add(inspection);
+            inspectionsApres.Add(inspection);
+            Location locationTest = new Location(0, DateTime.Now.AddDays(2), DateTime.Now.AddDays(3), 0, "test", 0, 20, Etat.Location, inspectionsAvant, inspectionsApres, "Kilometrage", 0, 0);
 
             locationTest.AddInspectionStart("test2", "test2");
             locationTest.AddInspectionEnd("test3", "test3");
