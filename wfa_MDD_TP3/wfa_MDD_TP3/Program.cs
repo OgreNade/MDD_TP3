@@ -19,7 +19,7 @@ namespace wfa_MDD_TP3
 
             SystemeGeneral systemeGeneral = new SystemeGeneral();
 
-            Application.Run(new MainForm(systemeGeneral));
+            Application.Run(new Connexion(systemeGeneral));
         }
     }
 }

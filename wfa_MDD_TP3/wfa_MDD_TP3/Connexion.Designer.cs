@@ -32,8 +32,8 @@ namespace wfa_MDD_TP3
             this.btnConnexion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtMDP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnConnexion
@@ -44,6 +44,7 @@ namespace wfa_MDD_TP3
             this.btnConnexion.TabIndex = 0;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
             // label1
             // 
@@ -63,27 +64,27 @@ namespace wfa_MDD_TP3
             this.label2.TabIndex = 2;
             this.label2.Text = "Mot de passe:";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtEmail.Location = new System.Drawing.Point(15, 25);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(227, 20);
+            this.txtEmail.TabIndex = 3;
             // 
-            // textBox2
+            // txtMDP
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtMDP.Location = new System.Drawing.Point(15, 64);
+            this.txtMDP.Name = "txtMDP";
+            this.txtMDP.Size = new System.Drawing.Size(227, 20);
+            this.txtMDP.TabIndex = 4;
             // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(264, 134);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMDP);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConnexion);
@@ -99,7 +100,7 @@ namespace wfa_MDD_TP3
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtMDP;
     }
 }
